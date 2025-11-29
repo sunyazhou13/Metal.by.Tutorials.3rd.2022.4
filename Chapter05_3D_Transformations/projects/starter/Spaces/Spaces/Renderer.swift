@@ -169,7 +169,7 @@ extension Renderer: MTKViewDelegate {
             [0, 0, 1, 0],
             [0, 0, 0, 1]
         )
-        matrix = rotationMatrix * translation.inverse
+        matrix = translation * rotationMatrix * translation.inverse
         renderEncoder.setVertexBytes(
             &matrix,
             length: MemoryLayout<matrix_float4x4>.stride,
